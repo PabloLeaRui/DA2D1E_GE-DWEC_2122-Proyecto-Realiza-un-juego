@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lordran Knight</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="intro">
+    <div class="titulo">Lordran Knight</div>
+    <div class="jugar"><a>Jugar Ahora</a></div>
+    <div class="controles"><a>Controles</a></div>
+    <div class="footer">Desarrollado por Julián Méndez</div>
+</div>
+
+
+<div class="popup" id="menuEsc">
+    <div class="popup-header">
+        <div class="title">Menu</div>
+        <button data-close-button class="cerrar">&times;</button>
+    </div>
+    <div class="popup-body">
+        <img src="imagenes/wasd.png" alt="controles">
+        <div>
+            <div class="reiniciar"><a>Reiniciar nivel</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="menuControles">
+    <div class="popup-header">
+        <div class="title">Controles</div>
+        <button data-close-button class="cerrar">&times;</button>
+    </div>
+    <div class="popup-body">
+        <img src="imagenes/wasd.png" alt="controles">
+    </div>
+</div>
+
+<div class="hoguera" id="hogueraApagada">Pulse R para establecer punto de aparicion</div>
+<div class="hoguera" id="hogueraEncendida">Lampara encendida. Punto de aparicion reestablecido</div>
+
+<div class="hasmuerto">
+    <p>Has muerto</p>
+</div>
+
+<canvas class="juego"></canvas>
+
+<script src="script/clases.js"></script>
+<script src="script/mapa.js"></script>
+
+<script src="script/funciones.js"></script>
+<script src="script/index.js"></script>
+<script src="script/menus.js"></script>
+
+
+</body>
+</html>

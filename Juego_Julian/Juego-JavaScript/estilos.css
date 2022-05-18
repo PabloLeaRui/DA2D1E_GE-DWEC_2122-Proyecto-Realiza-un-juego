@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+/*font-family: 'MedievalSharp', cursive;*/
+
+* {
+    margin: 0;
+}
+
+/**, *::after, *::before{*/
+/*    box-sizing: border-box;*/
+/*}*/
+canvas {
+    background-color: #003049;
+}
+
+.intro {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    height: 90vh;
+    background-color: black;
+    color: antiquewhite;
+    font-size: 90px;
+    font-family: 'MedievalSharp', cursive;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.intro div {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.jugar, .historia, .controles {
+    font-size: 50px;
+    margin: 2rem;
+}
+
+.footer {
+    position: absolute;
+    font-size: 20px;
+    bottom: 0;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(1.2rem, 3vw, 3rem);
+    font-weight: 700;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a {
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: rgba(173, 180, 167, 0.6);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+
+a:hover::after,
+a:focus::after {
+    opacity: 1;
+}
+
+.popup {
+    display: none;
+    font-size: 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: rgba(173, 180, 167, 1);
+    height: 80vh;
+    width: 80%;
+}
+
+.popup-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.popup-header .title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.popup-header .cerrar {
+
+    font-size: 70px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-weight: bold;
+}
+
+.popup-body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.reiniciar{
+    align-self: center;
+    cursor: pointer;
+}
+
+.hoguera{
+    z-index: 9;
+    width: 60%;
+    height: 12vh;
+    display: none;
+    background-color: rgba(173, 180, 167, 0.5);
+    border-radius: 10px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.display {
+    display: block;
+}
+
+.animacionMuerte {
+    transform: translate(-50%, -50%);
+    background: black;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+    animation: fade-in 10s linear;
+
+}
+
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+@keyframes text-zoom {
+    0% { font-size: 2.5em; }
+    25% { font-size: 3em; }
+    50% { font-size: 3.5em; }
+    75% { font-size: 4em; }
+}
+
+.hasmuerto{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #ff0000;
+    font-family: OptimusPrinceps, sans-serif;
+    letter-spacing: 5px;
+    font-size: 4em;
+    font-weight: bold;
+    animation: fade-in 10s linear, text-zoom 5s linear;
+}
