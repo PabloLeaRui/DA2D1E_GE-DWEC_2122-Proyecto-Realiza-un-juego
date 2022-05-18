@@ -1,0 +1,120 @@
+body {
+  padding: 2em;
+  background-color: rgb(6, 5, 32);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#board {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 1em;
+  width: 500px;
+  height: 500px;
+}
+
+.row {
+  flex-grow: 1;
+  background-color: rgb(99, 10, 10);
+  display: flex;
+  padding: 0.5em;
+  gap: 0.5em;
+  border: 1px solid gold;
+}
+
+.cell {
+  background-color: Grey;
+  flex-grow: 1;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.light-on {
+  background-color: Gold;
+}
+
+button {
+  background-color: Grey;
+  border: 1px solid gold;
+  color: Gold;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px 10px 15px;
+  cursor: pointer;
+}
+
+#timer,
+#counter {
+  color: gold;
+  font-size: 18px;
+  margin-left: 15px;
+}
+
+#instructions {
+  color: white;
+  font-size: 18px;
+  margin-left: 15px;
+  width: 250px;
+}
+
+#spanLights {
+  color: Gold;
+  font-size: 27px;
+}
+
+label {
+  font-family: monospace;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+input {
+  font-size: 20px;
+  width: 200px;
+}
+
+#btnSubmit {
+  background-color: Grey;
+  border: 1px solid white;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px 10px 15px;
+  cursor: pointer;
+}
+
+#scores3,
+#scores5 {
+  color: white;
+}
+
+#scores3Div,
+#scores5Div {
+  vertical-align: top;
+  margin-left: 20px;
+}
+
+#scoreRegForm {
+  color: white;
+  margin-left: 15px;
+}
+
+#results {
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+h2 {
+  color: gold;
+}
+
+ul {
+  list-style: none;
+}

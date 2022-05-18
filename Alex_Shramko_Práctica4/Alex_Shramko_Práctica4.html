@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LightsOut</title>
+  <link rel="stylesheet" href="Alex_Shramko_Práctica4.css">
+</head>
+
+<body>
+
+  <div id="instructions">
+    <p>Bienvenido a <span id="spanLights">Lights Out!</span> Las celdas tienen dos estados: encendido y apagado.
+      <br />Las reglas son simples: al pinchar en una celda, su estado y el de todas las
+      celdas contiguas, cambia. ¿Serás capaz de apagar todas?
+    </p>
+  </div>
+
+  <div id="setup">
+    <button id="btnGrid3">3x3</button>
+    <button id="btnGrid5">5x5</button>
+    <button id="btnStart">Comenzar!</button><br />
+    <button id="btnShowScore3">Puntuaciones 3x3</button>
+    <button id="btnShowScore5">Puntuaciones 5x5</button><br />
+    <button id="btnRegScore">Registrar puntuación</button><br />
+    <div id="scoreRegForm">
+      <form>
+        <label for="name"><b>Nombre</b></label>
+        <input id="playerName" type="text" name="name" required>
+        <button id="btnSubmit">Registrar</button>
+      </form>
+    </div><br />
+    <span id="timer"></span>
+    <span id="counter"></span><br />
+  </div>
+
+  <div id="board">
+
+  </div>
+
+  <div id="results">
+    <div id="scores3Div">
+      <h2>Puntuaciones 3x3</h2>
+      <ul id="scores3"></ul>
+    </div>
+    <div id="scores5Div">
+      <h2>Puntuaciones 5x5</h2>
+      <ul id="scores5"></ul>
+    </div>
+  </div>
+
+  <script src="Alex_Shramko_Práctica4.js"></script>
+</body>
+
+</html>
