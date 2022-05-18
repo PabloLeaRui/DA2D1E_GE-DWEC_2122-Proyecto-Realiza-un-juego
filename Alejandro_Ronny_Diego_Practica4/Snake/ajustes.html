@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajustes</title>
+
+    <style>
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            color: white;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #pantalla {
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            width: 40%;
+            align-items: center;
+            gap: 1em;
+            margin-bottom: 5em;
+            max-width: 500px;
+        }
+
+        button {
+            width: 70%;
+            padding: 1em;
+            font-size: 1.2em;
+        }
+
+        h2 {
+            margin: 0;
+            text-decoration: underline;
+            text-align: right;
+        }
+
+        p#titulo {
+            margin-top: 0.5em;
+            color: white;
+            font-size: 4em;
+            text-decoration: underline;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            text-align: right;
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            text-align: right;
+        }
+
+        .fondo_serpiente,
+        .fondo_fruta {
+            width: 50px;
+            height: 50px;
+            float: right;
+            justify-self: right;
+        }
+
+        .fondo_serpiente>img,
+        .fondo_fruta>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .colorpicker_fruta,
+        .colorpicker_serpiente {
+            justify-self: right;
+        }
+
+        #color_tablero {
+            justify-self: left;
+        }
+
+
+        /**/
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        h2 {
+            border-top: 1px solid white;
+        }
+
+        @keyframes example {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /**/
+
+        .animate-charcter {
+            text-transform: uppercase;
+            background-image: linear-gradient(-225deg,
+                            #231557 0%,
+                            #44107a 29%,
+                            #ff1361 67%,
+                            #fff800 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            animation-direction: reverse;
+            display: inline-block;
+            font-size: 4em;
+            text-decoration: underline;
+        }
+
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /**/
+        /**/
+
+        .wrapper {
+            margin-top: 2em;
+        }
+
+
+        a#guardar,
+        a#cancelar {
+            display: block;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            font-family: sans-serif;
+            text-decoration: none;
+            color: white;
+            border: 2px solid #333;
+            letter-spacing: 2px;
+            text-align: center;
+            position: relative;
+            transition: all .35s;
+            border-radius: 40px 40px 40px 40px;
+        }
+
+        a#guardar {
+            background-color: rgb(1, 50, 1);
+        }
+
+        #guardar_boton {
+            justify-self: right;
+        }
+
+        a#cancelar {
+            background-color: rgb(91, 1, 1);
+            border-radius: 40px 40px 40px 40px;
+        }
+
+        a#guardar span,
+        a#cancelar span {
+            position: relative;
+            z-index: 2;
+            border-radius: 40px 40px 40px 40px;
+        }
+
+        a#guardar:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: green;
+            transition: all .35s;
+            border-radius: 40px 40px 40px 40px;
+        }
+
+        a#cancelar:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: red;
+            transition: all .35s;
+            border-radius: 40px 40px 40px 40px;
+        }
+
+
+        a#guardar:hover,
+        a#cancelar:hover {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+
+        a#guardar:hover:after,
+        a#cancelar:hover:after {
+            width: 100%;
+        }
+
+        /**/
+        h3 {
+            margin-top: 0.5em;
+        }
+
+        /**/
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="animate-charcter">Ajustes</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="pantalla">
+
+        <h2>Tablero</h2>
+        <br>
+        <p>Color:</p>
+        <input type="color" class="colorpicker_tablero" id="color_tablero" style="margin-left: 35%;">
+
+        <h2>Velocidad</h2>
+        <br>
+        <p>Lento: </p>
+        <input type="radio" name="velocidad" value="lento" id="velocidad_lenta">
+        <p>Medio: </p>
+        <input type="radio" name="velocidad" value="medio" id="velocidad_media">
+        <p>Rapido: </p>
+        <input type="radio" name="velocidad" value="rapido" id="velocidad_rapida">
+
+
+        <h2>Serpiente</h2>
+        <br>
+        <input type="color" class="colorpicker_serpiente" id="color_serpiente">
+        <input type="radio" name="serpiente" value="color" id="serpiente_si_color">
+        <div class="fondo_serpiente"><img src="patron_verder.jpg" alt="verde"></div>
+        <input type="radio" name="serpiente" value="verde" id="serpiente_si_verde">
+        <div class="fondo_serpiente"><img src="patron_rojo.jpg" alt="rojo"></div>
+        <input type="radio" name="serpiente" value="rojo" id="serpiente_si_rojo">
+        <div class="fondo_serpiente"><img src="patron_boa.jpg" alt="boa"></div>
+        <input type="radio" name="serpiente" value="boa" id="serpiente_si_boa">
+
+        <h2>Fruta</h2>
+        <br>
+        <input type="color" value="#ffffff" class="colorpicker_fruta" name="" id="color_fruta">
+        <input type="radio" name="fruta" value="color" id="fruta_si_color">
+        <div class="fondo_fruta"><img src="fresa.png" alt="fresa"></div>
+        <input type="radio" name="fruta" value="fresa" id="fruta_si_fresa">
+        <div class="fondo_fruta"><img src="manzana.png" alt="manzana"></div>
+        <input type="radio" name="fruta" value="manzana" id="fruta_si_manzana">
+        <div class="fondo_fruta"><img src="hamburguesa.png" alt="hamburguesa"></div>
+        <input type="radio" name="fruta" value="hamburguesa" id="fruta_si_hamburguesa">
+        
+
+        <div class="wrapper" id="guardar_boton">
+            <a href="#" id="guardar"><span>Guardar</span></a>
+        </div>
+
+        <div class="wrapper">
+            <a href="#" id="cancelar"><span>Cancelar</span></a>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        /*MARCAMOS LOS VALORES DE AJUSTES ACTUALES EN LOS INPUTS*/
+        /*RECUPERAMOS VALORES DE LOCALSTORAGE*/
+        //Tablero
+        var fondoAct = localStorage.getItem("tablero")
+        document.getElementById("color_tablero").value = fondoAct
+        //Velocidad
+        var velocidad = localStorage.getItem("velocidad")
+        switch(velocidad){
+            case "lento":
+                document.getElementById("velocidad_lenta").checked = true;
+                break;
+            case "medio":
+                document.getElementById("velocidad_media").checked = true;
+                break;
+            case "rapido":
+                document.getElementById("velocidad_rapida").checked = true;
+                break;
+            default:
+                document.getElementById("velocidad_lenta").value = velocidad;
+                document.getElementById("velocidad_lenta").checked = true;
+                break;
+        }
+        //Serpiente
+        var serpienteAct = localStorage.getItem("serpiente")
+        switch (serpienteAct) {
+            case "verde":
+                document.getElementById("serpiente_si_verde").checked = true;
+                break;
+            case "rojo":
+                document.getElementById("serpiente_si_rojo").checked = true;
+                break;
+            case "boa":
+                document.getElementById("serpiente_si_boa").checked = true;
+                break;
+            default:
+                document.getElementById("color_serpiente").value = serpienteAct
+                document.getElementById("serpiente_si_color").checked = true;
+                break;
+        }
+        //Fruta
+        var frutaAct = localStorage.getItem("fruta")
+        switch (frutaAct) {
+            case "fresa":
+                document.getElementById("fruta_si_fresa").checked = true;
+                break;
+            case "manzana":
+                document.getElementById("fruta_si_manzana").checked = true;
+                break;
+            case "hamburguesa":
+                document.getElementById("fruta_si_hamburguesa").checked = true;
+                break;
+            default:
+                document.getElementById("color_fruta").value = frutaAct
+                document.getElementById("fruta_si_color").checked = true;
+                break;
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        /*AL DARLE A GUARDAR, EN AJUSTES*/
+        /*CAMBIAMOS LOS VALORES DE DATOS LOCALSTORAGE QUE TIENEN LOS AJUSTES*/
+        document.getElementById("guardar").onclick = function () {
+            /*CAMBIANDO AJUSTES*/
+            //Velocidad
+            var velocidad = document.querySelector('input[name="velocidad"]:checked').value
+            if(velocidad != "lento" && velocidad != "medio" && velocidad != "rapido"){
+                var serpiente_velocidad = document.getElementById("velocidad_lenta").value
+            } else {
+                var serpiente_velocidad = velocidad
+            }
+            localStorage.setItem('velocidad', velocidad)
+            //Tablero
+            var fondo_tablero = document.getElementById("color_tablero").value;
+            localStorage.setItem('tablero', fondo_tablero)
+            //Serpiente
+            var serpiente = document.querySelector('input[name="serpiente"]:checked').value
+            if (serpiente != "verde" && serpiente != "rojo" && serpiente != "boa") {
+                var serpiente_color = document.getElementById("color_serpiente").value;
+            } else {
+                var serpiente_color = serpiente
+            }
+            localStorage.setItem('serpiente', serpiente_color)
+            //Fruta
+            var fruta = document.querySelector('input[name="fruta"]:checked').value
+            if (fruta != "fresa" && fruta != "manzana" && fruta != "hamburguesa") {
+                var fruta_color = document.getElementById("color_fruta").value;
+            } else {
+                var fruta_color = fruta
+            }
+            localStorage.setItem('fruta', fruta_color)
+
+            location.href = "portada.html";
+
+        };
+
+        /*AL DARLE A CANCELAR, EN AJUSTES*/
+        document.getElementById("cancelar").onclick = function () {
+            location.href = "portada.html";
+        };
+
+    </script>
+
+</body>
+
+</html>

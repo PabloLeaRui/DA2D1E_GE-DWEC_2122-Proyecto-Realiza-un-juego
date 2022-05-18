@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <link rel="stylesheet" href="css/Oriana_Gil_Practica4.css">
+</head>
+<body>
+
+    <div id="wrapTutorial">
+
+        <h1>Instrucciones del juego</h1>
+
+        <div class="scroll container">
+            <p>Encuentra todas las parejas del tablero.</p>
+            <img class="img" src="img/juego.png" alt="juego" width="40%" >
+        </div>
+        <div class="scroll container">
+            <p>Para ganar deberás completar los 3 niveles de dificultad.
+            En cada partida tendrás un número límitado de intentos para lograrlo.</p>
+            <img class="img" src="img/tablero3.png" alt="tablero">
+        </div>
+        <div class="scroll container">
+            <p>Con los botones de abajo podrás reninciar el nivel en el que te encuantras o volver a la pantalla de inicio. ¡Buena suerte!</p>
+            <img class="img" src="img/botones.png" alt="botones">
+        </div>
+
+
+        <div class="flex">
+            <button class="boton" onclick="volverInicio()">Volver al inicio</button>
+            <button class="boton" onclick="jugar()">Jugar</button>
+        </div>
+     
+        
+
+    </div>
+
+    <script src="Oriana_Gil_Practica4.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({
+            reset:true,
+            duration:2500,
+            delay:300
+        })
+
+        ScrollReveal().reveal('.scroll');
+
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="David_Perez_Practica4.css">
+    <title>Pac-Man</title>
+</head>
+<body>
+    <div id="menu">
+        <div id="logo"></div>
+        <button id="instruccionesButton" class="boton" onclick="abrirInstrucciones()">INSTRUCCIONES</button>
+        <button id="scoreButton" class="boton" onclick="crearScoreboard()">SCOREBOARD</button>
+        <div id="dificultad">
+            <p>DIFICULTAD</p>
+            <div class="botones">
+                <button class="facil boton" onclick="setDificultad('facil')">FÁCIL</button>
+                <button class="normal boton" onclick="setDificultad('normal')">NORMAL</button>
+                <button class="dificil boton" onclick="setDificultad('dificil')">DIFICIL</button>
+            </div>
+        </div>
+        <div id="jugarDiv">
+            <input type="text" name="nombre" id="nombre" placeholder="NOMBRE">
+            <span id="error"></span>
+            <button id="jugar" class="boton" onclick="onClickJugar()">JUGAR</button>
+        </div>
+    </div>
+
+    <div id="scoreBoard">
+        <span class="x" onclick="cerrarScoreboard()">❌</span>
+        <p>SCOREBOARD</p>
+    </div>
+
+    <div id="instrucciones">
+        <span class="x" onclick="cerrarInstrucciones()">❌</span>
+        <p>INSTRUCCIONES</p>
+        <div id="ins1" class="ins">
+            <P>USA LAS FLECHAS DEL TECLADO PARA MOVERTE. EL OBJETIVO ES RECOLECTAR TODOS LOS PUNTOS Y LAS CEREZAS SIN MORIR</P>
+            <img src="imgs/ins1.PNG">
+        </div>
+        <div id="ins2" class="ins">
+            <P>CUANDO ALCANCES LA ÚLTIMA CASILLA DE UNO DE LOS PASILLOS LATERALES, APARECERÁS EN EL PASILLO CONTRARIO</P>
+            <img src="imgs/ins21.PNG">
+            <img src="imgs/ins22.PNG">
+        </div>
+        <div id="ins3" class="ins">
+            <P>TIENES 3 VIDAS, CUANDO UNO DE LOS FANTASMAS TE ALCANCE PERDERÁS UNA VIDA. SI TE QUEDAS SIN VIDAS PERDERÁS LA PARTIDA</P>
+            <img src="imgs/ins31.PNG">
+            <img src="imgs/ins32.PNG">
+        </div>
+        <div id="ins4" class="ins">
+            <P>CUANDO PASES POR ENCIMA DE UNA CEREZA TENDRÁS 10 SEGUNDOS EN LOS QUE PODRÁS COMER A LOS FANTASMAS. MIENTRAS ESTO DURE, LOS MUROS APARECERÁN EN VERDE</P>
+            <img src="imgs/ins4.PNG">
+        </div>
+        <div id="ins5" class="ins">
+            <P>CUANDO TERMINES APARECERÁ EL TIEMPO TRANSCURRIDO, SI HAS GANADO, SE AÑADIRÁ TU NOMBRE Y EL TIEMPO AL SCOREBOARD</P>
+            <img src="imgs/ins5.PNG">
+        </div>
+    </div>
+    <script src="David_Perez_Practica4.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css">
+    <title>Snake</title>
+    <style></style>
+
+    <!-- 
+    defer: para que cargue despues del body
+    module: para trabajar con distintos archivos JS
+    -->
+    <script src="game.js" defer type="module"></script>
+    
+
+</head>
+
+<body>
+    <div id="game-board"></div>
+    <div class="score">
+        <h3>Current Score: <div id="score"></div></h3>
+        <button id="salir">Salir</button>
+    </div>
+
+    <!--TRAS EL DIV DEL TABLERO, LO EDITAMOS AQUÍ PARA QUE SE CAMBIE AL INICIAR-->
+    <script>
+        /*color del tablero*/
+        document.getElementById("game-board").style.backgroundColor = localStorage.getItem("tablero")
+
+        /*boton de salir*/
+        document.getElementById("salir").onclick = function () {
+            location.href = "portada.html";
+        };
+
+    </script>
+</body>
+
+</html>

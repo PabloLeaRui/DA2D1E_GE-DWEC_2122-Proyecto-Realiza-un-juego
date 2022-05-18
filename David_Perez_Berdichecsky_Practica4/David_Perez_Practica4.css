@@ -1,0 +1,372 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.pacman {
+    width: 30px;
+    height: 30px;
+}
+
+.pacman > div {
+  background-color: #ff0;
+  height: 15px;
+  width: 30px;
+  position: relative;
+}
+
+.pacman-top {
+  top: 0;
+  border-radius: 100px 100px 0 0;
+  animation: spinTop .5s infinite linear;
+}
+
+.pacman-bot {
+  bottom: 0;
+  border-radius: 0 0 100px 100px;
+  animation: spinBottom .5s infinite linear;
+}
+
+@keyframes spinTop {
+
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-35deg);
+  }
+}
+
+@keyframes spinBottom {
+
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(35deg);
+  }
+}
+
+#principal {
+    margin-top: .5em;
+    width: 40%;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(21, 1fr);
+    background-color: black;
+}
+
+.celda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.muro {
+    background-color: black;
+    border: 1px solid blue;
+    border-collapse: collapse;
+}
+
+.spawnFanBorde {
+    background-color:red;
+}
+
+.cereza {
+    background-image: url(imgs/cereza.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.punto {
+    background-image: url(imgs/punto.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.score {
+  height: 90px;
+  width: 150px;
+  background-color: black;
+  color: #0ce838;
+  border: 1px solid #0ce838;
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.score > p {
+  height: 25px;
+  font-size: 20px;
+  margin: 0;
+}
+
+.vidas {
+  height: 90px;
+  width: 150px;
+  background-color: black;
+  border: 1px solid yellow;
+  margin: 2em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.vida {
+  width: 30px;
+  height: 30px;
+}
+
+.vida > div {
+  background-color: #ff0;
+  height: 15px;
+  width: 30px;
+  position: relative;
+}
+
+.vidaTop {
+  top: 0;
+  border-radius: 100px 100px 0 0;
+  transform: rotate(-35deg);
+}
+
+.vidaBot {
+  bottom: 0;
+  border-radius: 0 0 100px 100px;
+  transform: rotate(35deg);
+}
+
+.final {
+  width: 400px;
+  height: 500px;
+  border: 1px solid #0dadd1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.reset, .volver {
+  width: 150px;
+  height: 50px;
+  color: #0dadd1;
+  border: 1px solid #0dadd1;
+  background-color: black;
+}
+
+.pause {
+  width: 300px;
+  height: 400px;
+  border: 1px solid #0dadd1;
+  color: #0dadd1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.pause > p:first-child {
+  font-size: 30px;
+}
+
+.fantasma {
+  width: 30px;
+  height: 30px;
+  animation: flotar 0.5s infinite linear;
+  position: absolute;
+}
+
+@keyframes flotar{
+
+  25% {
+    margin-bottom: 5px;
+  }
+
+  50% {
+    margin-bottom: 0px;
+  }
+
+  75% {
+    margin-top: 5px;
+  }
+
+}
+
+.rojo {
+  background-image: url("imgs/fanRojo.png");
+  background-size: contain;
+}
+
+.azul {
+  background-image: url("imgs/fanAzul.png");
+  background-size: contain;
+}
+
+.rosa {
+  background-image: url("imgs/fanRosa.png");
+  background-size: contain;
+}
+
+.tiempo {
+  color: #0dadd1;
+}
+
+.textoFinal {
+  color: #0dadd1;
+  font-size: 30px;
+}
+
+#menu {
+  border: 1px solid #0dadd1;
+  width: 40%;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#logo {
+  width: 60%;
+  height: 20%;
+  background-image: url(imgs/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#dificultad {
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1em;
+  border: 1px solid #0dadd1;
+  padding: 2em;
+}
+
+.botones > button {
+  width: 100px;
+  background-color: black;
+  padding: 1em;
+  color: #0dadd1;
+  border: 1px solid #0dadd1;
+}
+
+#dificultad > p {
+  font-size: 25px;
+  color: #0dadd1;
+}
+
+#jugarDiv {
+  width: 50%;
+  border: 1px solid #0dadd1;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#jugarDiv > input {
+  padding: 10px;
+}
+
+#jugarDiv > * {
+  width: 50%;
+  background-color: black;
+  color: #0dadd1;
+  border: 1px solid #0dadd1;
+}
+
+#error {
+  border: none;
+  width: fit-content;
+}
+
+#jugar {
+  height: 30px;
+}
+
+#scoreButton, #instruccionesButton {
+  width: 35%;
+  height: 8%;
+  color: #0dadd1;
+  border: 1px solid #0dadd1;
+  background-color: black;
+  font-size: 18px;
+}
+
+#scoreBoard, #instrucciones {
+  display: none;
+  border: 1px solid #0dadd1;
+  width: 40%;
+  height: 95vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+
+#scoreBoard > *, #instrucciones > * {
+  color: #0dadd1;
+}
+
+#scoreBoard > div {
+  border: 1px solid #0dadd1;
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+
+#scoreBoard > div > p {
+  margin: 10px 2em 10px 2em;
+}
+
+.x {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 7px;
+  margin-right: 15px;
+}
+
+.x:hover {
+  cursor: default;
+}
+
+#instrucciones {
+  height: fit-content;
+  padding: 1em;
+}
+
+#instrucciones > div {
+  border: 1px solid #0dadd1;
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+img {
+  width: 200px;
+}

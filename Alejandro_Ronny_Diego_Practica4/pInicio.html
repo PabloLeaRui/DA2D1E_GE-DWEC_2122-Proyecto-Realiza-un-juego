@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elije un juego</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        /* alineacion del body para que este todo en el medio*/
+
+        body {
+            background-color: black;
+            height: 95vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* estilo del contenedor de los botones */
+        #pantalla {
+            display: flex;
+            width: 60%;
+            flex-direction: column;
+            gap: 1.5em;
+            max-width: 300px;
+        }
+
+        /* Estilos del titulo */
+        .animate-charcter {
+            background-image: linear-gradient(-225deg,
+                    #231557 0%,
+                    #44107a 29%,
+                    #ff1361 67%,
+                    #fff800 100%);
+
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            animation-direction: reverse;
+            font-size: 10em;
+        }
+
+        /* animacion movimiento del color */
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* esto es para el texto */
+        h3 {
+            margin: 0;
+        }
+
+        .container {
+            margin-top: 1em;
+        }
+
+        .tituloo {
+            display: flex;
+            gap: 1em;
+        }
+
+        /* estilo de los botones */
+        .btn {
+            box-sizing: border-box;
+            appearance: none;
+            background-color: transparent;
+            border: 2px solid #e74c3c;
+            border-radius: 0.6em;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1;
+            padding: 1.2em 2.8em;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            color: #fff;
+            outline: 0;
+        }
+
+        .second,
+        .first {
+            border-color: white;
+            color: black;
+            box-shadow: 0 0 40px 40px white inset, 0 0 0 0 white;
+            -webkit-transition: all 150ms ease-in-out;
+            transition: all 150ms ease-in-out;
+        }
+
+        /* estilo de los videos para que no se vean de primeras algunos y demas */
+        video {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            z-index: -1;
+            display: none;
+        }
+
+        #videito0 {
+            display: block;
+            width: 100%;
+            transition-delay: 5s;
+
+        }
+
+        .first:hover,
+        .second:hover {
+            box-shadow: 0 0 10px 0 white inset, 0 0 10px 4px white;
+
+        }
+
+
+        .botones_arriba {
+            display: flex;
+            gap: 1.5em;
+        }
+
+        #ins {
+
+            display: flex;
+            flex-direction: column-reverse;
+            height: 100px;
+            width: 1000px;
+            text-shadow: 0 0 3px #FF0000;
+            color: blue;
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <video id="videito0" src="ts1.mp4" autoplay="true" muted="true" loop="true"></video>
+    <video id="videito" src="pong.mp4" autoplay="true" muted="true" loop="true"></video>
+    <video id="videito1" src="snake.mp4" autoplay="true" muted="true" loop="true"></video>
+    <div class="tituloo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="animate-charcter">PICK A GAME </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+
+
+        /*estas son las funciones de los botones, unas llaman a otras para asi poder tener algo de pausa*/
+
+        function over9() {
+            const myTimeout = setTimeout(over, 500);
+
+        }
+        function out9() {
+            const myTimeout = setTimeout(out, 1000);
+        }
+
+        function over8() {
+            const myTimeout = setTimeout(over1, 500);
+
+        }
+        function out8() {
+            const myTimeout = setTimeout(out1, 1000);
+        }
+
+        function over() {
+            document.getElementById("videito").style.display = "block";
+
+        }
+        function out() {
+            document.getElementById("videito").style.display = "none";
+
+        }
+        function over1() {
+            document.getElementById("videito1").style.display = "block";
+
+        }
+        function out1() {
+            document.getElementById("videito1").style.display = "none";
+        }
+
+
+        function pajarito() {
+            window.location.replace("/JuegoPongJavaScript/Ronny_Collaguazo_Pilatuna_Practica4.html");
+
+        }
+
+        function pajarito5() {
+            window.location.replace("cargaS.html");
+
+        }
+
+
+
+
+    </script>
+
+
+    <div id="pantalla">
+        <button class="btn first" onclick="pajarito()" onmouseover="over9()" onmouseout="out9()">Pong</button>
+        <button id="snakee" class="btn second" onclick="pajarito5()" onmouseover="over8()"
+            onmouseout="out8()">Snake</button>
+    </div>
+    <div id="ins">INSTRUCCIONES DE USO: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, labore, commodi
+        aspernatur corporis,
+        quo recusandae quam reprehenderit at cupiditate eaque vel soluta rerum earum pariatur fugit ex consequatur
+        obcaecati. Aperiam.</div>
+
+    <script>
+        $("#ins").hide();
+        $("#snakee").hover(function () {
+            $("#ins").slideDown(2000);
+        });
+        $("#snakee").mouseleave(function (){
+            $("#ins").fadeOut(3000);
+        })
+
+    </script>
+</body>
+
+</html>
